@@ -9,6 +9,7 @@ interface Result {
     average: number;
 }
 
+// The function
 const calculateExercises = (dailyExerciseHours: number[], target: number): Result => {
     const periodLength = dailyExerciseHours.length;
     const trainingDays = dailyExerciseHours.filter((day) => day > 0).length;
@@ -41,6 +42,32 @@ const calculateExercises = (dailyExerciseHours: number[], target: number): Resul
     };
 };
 
-// Calling the function
-const result = calculateExercises([3, 0, 2, 4.5, 0, 3, 1], 2);
+// Get the arguments
+const args = process.argv.slice(2);
+
+if (args.length < 2) {
+    console.log("Please provide at least the target and the daily exercise hours.");
+    process.exit(1);
+}
+
+// Convert the first argument
+const target = Number(args[0]);
+
+// Validate that target is a number
+if (isNaN(target)) {
+    console.log("The target should be a valid number.");
+    process.exit(1);
+}
+
+// Convert the remaining arguments to an array of numbers
+const dailyExerciseHours = args.slice(1).map((hour) => Number(hour));
+
+// Validate
+if (dailyExerciseHours.some(isNaN)) {
+    console.log("All daily exercise hours should be valid numbers.");
+    process.exit(1);
+}
+
+// Call the function
+const result = calculateExercises(dailyExerciseHours, target);
 console.log(result);
