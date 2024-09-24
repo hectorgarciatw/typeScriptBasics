@@ -1,0 +1,14 @@
+{
+    "name": "calculate-bmi",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "calculateBmi": "ts-node bmi.ts"
+    },
+    "dependencies": {},
+    "devDependencies": {
+        "ts-node": "^10.0.0",
+        "typescript": "^4.0.0"
+    }
+}
