@@ -31,5 +31,5 @@ app.get("/bmi", (req: Request, res: Response) => {
 
 // Initialize the server
 app.listen(port, () => {
-    console.log(`Server running at http://localhost:${port}`);
+    console.log(`Server running in http://localhost:${port}`);
 });
