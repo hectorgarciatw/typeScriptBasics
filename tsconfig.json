@@ -1,14 +1,13 @@
 {
     "compilerOptions": {
-        "target": "ES2022",
-        "strict": true,
-        "noUnusedLocals": true,
-        "noUnusedParameters": true,
-        "noImplicitReturns": true,
-        "noFallthroughCasesInSwitch": true,
-
-        "noImplicitAny": true,
-        "esModuleInterop": true,
-        "moduleResolution": "node"
-    }
+        "target": "ES6", // Objetivo de ECMAScript 6
+        "module": "CommonJS", // Usa el sistema de módulos de Node.js
+        "outDir": "./dist", // Carpeta donde se pondrá el código compilado
+        "strict": true, // Activa todas las comprobaciones estrictas de TypeScript
+        "esModuleInterop": true, // Permite importar módulos CommonJS de manera más fácil
+        "skipLibCheck": true, // Omite la verificación de las definiciones de tipos en los módulos
+        "forceConsistentCasingInFileNames": true // Fuerza el uso consistente de nombres de archivo
+    },
+    "include": ["src"], // Directorio con los archivos .ts
+    "exclude": ["node_modules"] // Excluye la carpeta node_modules
 }
